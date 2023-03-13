@@ -1,0 +1,17 @@
+img {
+    aspect-ratio: 1/1;
+    max-width: 250px;
+    width: 100%;
+    border-radius: 100%;
+}
+
+ul {
+    list-style: inside;
+    margin: 0;
+    padding: 0;
+}
+
+ul:before {
+    content: 'Repositories:';
+    font-weight: bold;
+}

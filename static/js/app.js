@@ -1,3 +1,3 @@
-import { data } from "./modules/fetch.js";
+import { render } from "./modules/render.js";
 
-console.log(data);
+render();

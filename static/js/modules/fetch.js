@@ -5,4 +5,9 @@ const octokit = new Octokit({
     auth: token
 });
 
-export const { data } = await octokit.request("/user");
+export const user = await octokit.request("/user");
+
+export const repos = await octokit.request("/user/repos");
+
+console.log(user);
+console.log(repos);
