@@ -88,7 +88,7 @@ export function pdfViewer() {
                 <button></button>
             </header>
             <main>
-                <iframe src="./../../static/pdf/cv.pdf">
+                <iframe src="./static/pdf/cv.pdf">
             </main>
         `);
         dragElement(pdfViewer);
