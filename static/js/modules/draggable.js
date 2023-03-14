@@ -1,5 +1,4 @@
 export function dragElement(element) {
-    console.log(element.tagName + " > header")
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.querySelector(element.tagName + " > header")) {
       // if present, the header is where you move the DIV from:

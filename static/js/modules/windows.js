@@ -1,4 +1,5 @@
 import { dragElement } from "./draggable.js";
+import { render } from "./render.js";
 
 const main = document.querySelector("body > main");
 
@@ -12,23 +13,28 @@ export function browser() {
         main.appendChild(browser);
         browser.insertAdjacentHTML('beforeend', `
             <header>
-                <img src="./static/img/chrome-icon.png" alt="Chrome icon">
-                <p>Google Chrome</p>
+                <img src="./static/img/github-icon.png" alt="GitHub icon">
+                <p>casperdennijs (Casper) - Google Chrome</p>
                 <button></button>
             </header>
             <main>
                 <header>
                     <form>
-                        <input type="text">
+                        <input type="text" value="https://github.com/casperdennijs">
                         <input type="submit" value="">
                     </form>
                 </header>
                 <viewer>
-                    <iframe src="https://tracker.gg"></iframe>
+                    <user>
+                    </user>
+                    <repos>
+                        <h2>Repositories</h2>
+                    </repos>
                 </viewer>
             </main>
         `);
         dragElement(browser);
+        render();
         let closeButton = document.querySelector("browser > header button");
         closeButton.addEventListener('click', () => {
             const browser = document.querySelector("browser");
