@@ -6,7 +6,6 @@ const octokit = new Octokit({
 });
 
 export const user = await octokit.request("/user");
-
 export const repos = await octokit.request("/user/repos");
 
 console.log(user);

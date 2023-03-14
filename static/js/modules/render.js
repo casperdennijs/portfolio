@@ -1,4 +1,4 @@
-import { user, repos } from "./fetch.js";
+/* import { user, repos } from "./fetch.js";
 const body = document.querySelector("body");
 
 export function render() {
@@ -25,4 +25,4 @@ export function render() {
         repo.appendChild(link);
         unorderedList.appendChild(repo);
     }
-}
+} */
