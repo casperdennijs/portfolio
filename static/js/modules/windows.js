@@ -6,6 +6,7 @@ const main = document.querySelector("body > main");
 let browserStatus = 0;
 let explorerStatus = 0;
 let pdfViewerStatus = 0;
+let mp4ViewerStatus = 0;
 
 export function browser() {
     if (browserStatus == 0) {
@@ -13,17 +14,11 @@ export function browser() {
         main.appendChild(browser);
         browser.insertAdjacentHTML('beforeend', `
             <header>
-                <img src="./static/img/github-icon.png" alt="GitHub icon">
-                <p>casperdennijs (Casper) - Google Chrome</p>
+                <img src="./static/img/internet-icon.png" alt="Internet Explorer icon">
+                <p>Internet Explorer</p>
                 <button></button>
             </header>
             <main>
-                <header>
-                    <form>
-                        <input type="text" value="https://github.com/casperdennijs">
-                        <input type="submit" value="">
-                    </form>
-                </header>
                 <viewer>
                     <user>
                     </user>
@@ -64,11 +59,17 @@ export function explorer() {
                     <img src="./static/img/pdf-icon.png" alt="PDF icon">
                     <p>CV.pdf</p>
                 </file>
+                <file>
+                    <img src="./static/img/mp4-icon.png" alt="MP4 icon">
+                    <p>t0p_s3cr3t.mp4</p>
+                </file>
             </main>
         `);
         dragElement(explorer);
         let pdfBtn = document.querySelector("explorer main file:first-child")
         pdfBtn.addEventListener("click", pdfViewer)
+        let mp4Btn = document.querySelector("explorer main file:first-child")
+        mp4Btn.addEventListener("click", mp4Viewer)
         let closeButton = document.querySelector("explorer > header button");
         closeButton.addEventListener('click', () => {
             const explorer = document.querySelector("explorer");
@@ -90,7 +91,7 @@ export function pdfViewer() {
         pdfViewer.insertAdjacentHTML('beforeend', `
             <header>
                 <img src="./static/img/pdf-icon.png" alt="PDF icon">
-                <p>CV.pdf - PDF Viewer</p>
+                <p>CV.pdf</p>
                 <button></button>
             </header>
             <main>
@@ -109,5 +110,34 @@ export function pdfViewer() {
         const pdfViewer = document.querySelector("pdfViewer");
         pdfViewer.remove();
         pdfViewerStatus = 0;
+    }
+}
+
+export function mp4Viewer() {
+    if (mp4ViewerStatus == 0) {
+        const mp4Viewer = document.createElement("mp4Viewer");
+        main.appendChild(mp4Viewer);
+        mp4Viewer.insertAdjacentHTML('beforeend', `
+            <header>
+                <img src="./static/img/mp4-icon.png" alt="MP4 icon">
+                <p>t0p_s3cr3t.mp4</p>
+                <button></button>
+            </header>
+            <main>
+                <iframe src="./static/pdf/cv.pdf">
+            </main>
+        `);
+        dragElement(mp4Viewer);
+        let closeButton = document.querySelector("mp4Viewer > header button");
+        closeButton.addEventListener('click', () => {
+            const mp4Viewer = document.querySelector("mp4Viewer");
+            mp4Viewer.remove();
+            mp4ViewerStatus = 0;
+        })
+        mp4ViewerStatus = 1;
+    } else {
+        const mp4Viewer = document.querySelector("mp4Viewer");
+        mp4Viewer.remove();
+        mp4ViewerStatus = 0;
     }
 }

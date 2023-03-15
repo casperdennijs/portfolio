@@ -20,20 +20,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-footer {
-    height: 50px;
+body > footer {
+    height: 40px;
     width: 100%;
     position: absolute;
     bottom: 0;
     display: flex;
     gap: 4px;
 
-    background-color: rgb(22, 22, 22);
+    background: rgb(0,98,175);
+    background: linear-gradient(0deg, rgba(0,98,175,1) 0%, rgba(0,98,175,1) 85%, rgba(31,132,212,1) 100%);
 }
 
-footer button {
-    aspect-ratio: 1/1;
-    height: 50px;
+body > footer button {
+    height: 40px;
     background-color: transparent;
     border: none;
     background-size: 24px;
@@ -41,25 +41,162 @@ footer button {
     background-repeat: no-repeat;
 }
 
-footer button:hover {
+body > footer button:hover {
     background-color: rgb(255 255 255 / 0.1);
     cursor: pointer;
 }
 
-footer > button {
-    background-image: url(../img/windows-icon.png);
+footer start > button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+    padding: 0 2em 0 1em;
+    background: rgb(67,164,70);
+    background: linear-gradient(0deg, rgba(67,164,70,1) 0%, rgba(67,164,70,1) 85%, rgba(32,210,37,1) 100%);
+    border-radius: 0 15px 15px 0;
+    box-shadow: inset -10px 0px 5px -5px rgba(0,0,0,0.2);
+}
+
+footer start > button:hover {
+    background: linear-gradient(0deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0.15) 100%), linear-gradient(0deg, rgba(67,164,70,1) 0%, rgba(67,164,70,1) 85%, rgba(32,210,37,1) 100%);
+}
+
+footer start > button img {
+    width: 38px;
+}
+
+footer start > button p {
+    font-size: 18px;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+footer start > menu {
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px 10px 5px 0;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.5);
+}
+
+footer start > menu.active {
+    display: block;
+}
+
+footer start > menu header {
+    height: 80px;
+    background: rgb(31,132,212);
+    background: linear-gradient(0deg, rgba(31,132,212,1) 0%, rgba(0,98,175,1) 100%);
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 1em;
+}
+
+footer start > menu header div {
+    height: 60px;
+    width: 60px;
+    background-image: url("https://avatars.githubusercontent.com/u/56598338?v=4");
+    background-size: cover;
+    border-radius: 5px;
+    border: 2px solid white;
+    box-shadow: 2px 2px 6px rgba(0 0 0 / 0.5);
+}
+
+footer start > menu header p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    font-size: 22px;
+}
+
+footer start > menu main {
+    background-color: white;
+    height: calc(100% - 140px);
+    width: 100%;
+    border-left: 4px solid rgb(31,132,212);
+    border-right: 4px solid rgb(31,132,212);
+}
+
+footer start > menu footer {
+    display: block;
+    height: 60px;
+    background: rgb(0,98,175);
+    background: linear-gradient(0deg, rgba(0,98,175,1) 0%, rgba(31,132,212,1) 100%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+}
+
+footer start > menu footer button {
+    display: block;
+    aspect-ratio: 1/1;
+    height: 30px;
+    border: none;
+    color: white;
+    margin-left: 1em;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+footer start > menu footer button:nth-of-type(1) {
+    background: rgb(214,148,15);
+    background: url(../img/close.png), linear-gradient(315deg, rgb(214, 148, 15) 0%, rgb(255, 173, 90) 75%, rgba(255,255,255,1) 100%);
+    background-size: 20px, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer start > menu footer button:nth-of-type(2) {
+    background: rgb(214,66,15);
+    background: url(../img/close.png), linear-gradient(315deg, rgba(214,66,15,1) 0%, rgba(255,133,90,1) 75%, rgba(255,255,255,1) 100%); 
+    background-size: 20px, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer start > menu footer p {
+    color: white;
 }
 
 footer nav > button {
-    background-size: 36px;
+    width: 40px;
+    background-size: 28px;
 }
 
 footer nav > button:first-child {
-    background-image: url(../img/chrome-icon.png);
+    background-image: url(../img/internet-icon.png);
 }
 
 footer nav > button:nth-child(2) {
     background-image: url(../img/file-explorer-icon.png);
+}
+
+footer info {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-left: auto;
+    padding: 0 16px;
+    border-left: 1px solid black;
+    background: rgb(15,136,231);
+    background: linear-gradient(0deg, rgba(15,136,231,1) 0%, rgba(15,136,231,1) 85%, rgba(105,189,255,1) 100%);
+    box-shadow: inset 10px 0px 5px -5px rgba(0,0,0,0.2);
+}
+
+footer info time, footer info date {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
 browser, explorer, pdfViewer {
@@ -69,7 +206,7 @@ browser, explorer, pdfViewer {
     width: 1100px;
     height: 700px;
     background-color: rgb(41, 41, 41);
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
     transform: translate(-50%, -50%);
@@ -89,11 +226,12 @@ explorer > header,
 pdfViewer > header {
     width: 100%;
     height: 40px;
-    background-color: rgb(22, 22, 22);
+    background: rgb(0,98,175);
+    background: linear-gradient(0deg, rgba(0,98,175,1) 0%, rgba(0,98,175,1) 85%, rgba(31,132,212,1) 100%);  
     display: flex;
     align-items: center;
     color: white;
-    padding: 8px;
+    padding: 6px;
     gap: .5em;
 }
 
@@ -108,6 +246,7 @@ browser header p,
 explorer header p,
 pdfViewer header p {
     pointer-events: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
 browser header button,
@@ -116,21 +255,36 @@ pdfViewer header button {
     display: block;
     aspect-ratio: 1/1;
     height: 100%;
-    background-color: transparent;
-    background-image: url(../img/close.png);
-    background-size: 16px;
+    background: rgb(214,66,15);
+    background: url(../img/close.png), linear-gradient(315deg, rgba(214,66,15,1) 0%, rgba(255,133,90,1) 75%, rgba(255,255,255,1) 100%);
+    background-size: 16px, cover;
     background-position: center;
     background-repeat: no-repeat;
     border: none;
     color: white;
     margin-left: auto;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 browser header button:hover,
 explorer header button:hover,
 pdfViewer header button:hover {
-    background-color: rgb(255 255 255 / 0.1);
+    background: linear-gradient(0deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0.15) 100%), url(../img/close.png), linear-gradient(315deg, rgba(214,66,15,1) 0%, rgba(255,133,90,1) 75%, rgba(255,255,255,1) 100%);
+    background-size: cover, 16px, cover;
+    background-position: center;
+    background-repeat: no-repeat;
     cursor: pointer;
+}
+
+browser > main,
+explorer > main,
+pdfViewer > main {
+    height: 100%;
+    border-left: 4px solid rgb(0,98,175);
+    border-right: 4px solid rgb(0,98,175);
+    border-bottom: 4px solid rgb(0,98,175);
+    overflow: hidden;
 }
 
 browser main {
@@ -138,51 +292,10 @@ browser main {
     color: white;
 }
 
-browser main header {
-    width: 100%;
-    height: 40px;
-    background-color: rgb(61, 61, 61);
-    display: flex;
-    align-items: center;
-    padding: 8px;
-}
-
-browser main form {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    gap: 1em;
-}
-
-browser main form input[type=text] {
-    padding: 0 1em;
-    display: block;
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: rgb(92, 92, 92);
-    color: white;
-    border-radius: 100px;
-    pointer-events: none;
-}
-
-browser main form input[type=submit] {
-    aspect-ratio: 1/1;
-    height: 100%;
-    background-color: transparent;
-    background-image: url(../img/arrow-right.png);
-    background-size: 32px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    pointer-events: none;
-}
-
 browser main viewer {
     display: flex;
     gap: 1em;
-    height: calc(100% - 40px);
+    height: 100%;
 }
 
 browser main viewer user {
@@ -290,19 +403,21 @@ browser main viewer repos repo p {
 }
 
 explorer main {
+    background-color: #ffffff;
     display: flex;
-    gap: .5em;
+    gap: 3em;
     padding: 1em;
+    height: calc(100% - 40px)
 }
 
 explorer main file {
-    height: 110px;
-    width: 100px;
+    height: 60px;
+    width: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: black;
 }
 
 explorer main file:hover {
@@ -312,7 +427,7 @@ explorer main file:hover {
 
 explorer main file img {
     aspect-ratio: 1/1;
-    width: 75px;
+    width: 50px;
 }
 
 explorer main file p {
@@ -320,7 +435,7 @@ explorer main file p {
 }
 
 pdfViewer main {
-    height: 100%;
+    height: calc(100% - 40px);
 }
 
 pdfViewer main iframe {
