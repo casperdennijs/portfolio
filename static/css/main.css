@@ -199,7 +199,7 @@ footer info time, footer info date {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
-browser, explorer, pdfViewer {
+browser, explorer, pdfViewer, mp4Viewer {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -221,9 +221,15 @@ pdfViewer {
     width: 600px;
 }
 
+mp4Viewer {
+    height: 400px;
+    width: 450px;
+}
+
 browser > header,
 explorer > header,
-pdfViewer > header {
+pdfViewer > header,
+mp4Viewer > header {
     width: 100%;
     height: 40px;
     background: rgb(0,98,175);
@@ -237,21 +243,24 @@ pdfViewer > header {
 
 browser header img,
 explorer header img,
-pdfViewer header img {
+pdfViewer header img,
+mp4Viewer header img {
     height: 24px;
     pointer-events: none;
 }
 
 browser header p,
 explorer header p,
-pdfViewer header p {
+pdfViewer header p,
+mp4Viewer header p {
     pointer-events: none;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
 browser header button,
 explorer header button,
-pdfViewer header button {
+pdfViewer header button,
+mp4Viewer header button {
     display: block;
     aspect-ratio: 1/1;
     height: 100%;
@@ -269,7 +278,8 @@ pdfViewer header button {
 
 browser header button:hover,
 explorer header button:hover,
-pdfViewer header button:hover {
+pdfViewer header button:hover,
+mp4Viewer header button:hover {
     background: linear-gradient(0deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0.15) 100%), url(../img/close.png), linear-gradient(315deg, rgba(214,66,15,1) 0%, rgba(255,133,90,1) 75%, rgba(255,255,255,1) 100%);
     background-size: cover, 16px, cover;
     background-position: center;
@@ -279,7 +289,8 @@ pdfViewer header button:hover {
 
 browser > main,
 explorer > main,
-pdfViewer > main {
+pdfViewer > main,
+mp4Viewer > main {
     height: 100%;
     border-left: 4px solid rgb(0,98,175);
     border-right: 4px solid rgb(0,98,175);
@@ -442,4 +453,15 @@ pdfViewer main iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+mp4Viewer main {
+    height: calc(100% - 40px);
+}
+
+
+mp4Viewer main video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }

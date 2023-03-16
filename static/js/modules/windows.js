@@ -59,7 +59,7 @@ export function explorer() {
                     <img src="./static/img/pdf-icon.png" alt="PDF icon">
                     <p>CV.pdf</p>
                 </file>
-                <file>
+                <file title="Open at own risk! You have been warned!">
                     <img src="./static/img/mp4-icon.png" alt="MP4 icon">
                     <p>t0p_s3cr3t.mp4</p>
                 </file>
@@ -68,7 +68,7 @@ export function explorer() {
         dragElement(explorer);
         let pdfBtn = document.querySelector("explorer main file:first-child")
         pdfBtn.addEventListener("click", pdfViewer)
-        let mp4Btn = document.querySelector("explorer main file:first-child")
+        let mp4Btn = document.querySelector("explorer main file:nth-of-type(2)")
         mp4Btn.addEventListener("click", mp4Viewer)
         let closeButton = document.querySelector("explorer > header button");
         closeButton.addEventListener('click', () => {
@@ -124,9 +124,13 @@ export function mp4Viewer() {
                 <button></button>
             </header>
             <main>
-                <iframe src="./static/pdf/cv.pdf">
+                <video autoplay>
+                    <source src="./static/video/t0p_s3cr3t.mp4" type="video/mp4">
+                </video>
             </main>
         `);
+        const video = document.querySelector("mp4Viewer main video")
+        video.volume = 0.5;
         dragElement(mp4Viewer);
         let closeButton = document.querySelector("mp4Viewer > header button");
         closeButton.addEventListener('click', () => {
