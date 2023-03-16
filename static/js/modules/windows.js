@@ -1,14 +1,13 @@
 import { dragElement } from "./draggable.js";
 import { render } from "./render.js";
 
-const main = document.querySelector("body > main");
-
 let browserStatus = 0;
 let explorerStatus = 0;
 let pdfViewerStatus = 0;
 let mp4ViewerStatus = 0;
 
 export function browser() {
+    const main = document.querySelector("body > main");
     if (browserStatus == 0) {
         const browser = document.createElement("browser");
         main.appendChild(browser);
@@ -45,6 +44,7 @@ export function browser() {
 }
 
 export function explorer() {
+    const main = document.querySelector("body > main");
     if (explorerStatus == 0) {
         const explorer = document.createElement("explorer");
         main.appendChild(explorer);
@@ -85,6 +85,7 @@ export function explorer() {
 }
 
 export function pdfViewer() {
+    const main = document.querySelector("body > main");
     if (pdfViewerStatus == 0) {
         const pdfViewer = document.createElement("pdfViewer");
         main.appendChild(pdfViewer);
@@ -114,6 +115,7 @@ export function pdfViewer() {
 }
 
 export function mp4Viewer() {
+    const main = document.querySelector("body > main");
     if (mp4ViewerStatus == 0) {
         const mp4Viewer = document.createElement("mp4Viewer");
         main.appendChild(mp4Viewer);
@@ -144,4 +146,30 @@ export function mp4Viewer() {
         mp4Viewer.remove();
         mp4ViewerStatus = 0;
     }
+}
+
+export function systemWelcome() {
+    const main = document.querySelector("body > main");
+    const welcome = document.createElement("welcome");
+    main.appendChild(welcome);
+    welcome.insertAdjacentHTML('beforeend', `
+        <header>
+            <img src="./static/img/windows-icon.png" alt="Windows icon">
+            <p>Welcome</p>
+            <button></button>
+        </header>
+        <main>
+            <img src="./static/img/welcome.gif" alt="Baby Yoda welcome gif">
+        </main>
+    `);
+        
+    const popupSound = new Audio('./../../static/audio/popup.mp3');
+    popupSound.volume = 1;
+    popupSound.play();
+    dragElement(welcome);
+    let closeButton = document.querySelector("welcome > header button");
+    closeButton.addEventListener('click', () => {
+        const welcome = document.querySelector("welcome");
+        welcome.remove();
+    })
 }
